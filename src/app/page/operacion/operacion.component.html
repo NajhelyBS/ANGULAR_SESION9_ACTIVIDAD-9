@@ -1,0 +1,29 @@
+<p>operacion works!</p>
+
+<div class="flex py-2">
+    <span class="flex items-center justify-center border border-gray-400 border-r-0 py-2 px-3 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M11.097 1.515a.75.75 0 01.589.882L10.666 7.5h4.47l1.079-5.397a.75.75 0 111.47.294L16.665 7.5h3.585a.75.75 0 010 1.5h-3.885l-1.2 6h3.585a.75.75 0 010 1.5h-3.885l-1.08 5.397a.75.75 0 11-1.47-.294l1.02-5.103h-4.47l-1.08 5.397a.75.75 0 01-1.47-.294l1.02-5.103H3.75a.75.75 0 110-1.5h3.885l1.2-6H5.25a.75.75 0 010-1.5h3.885l1.08-5.397a.75.75 0 01.882-.588zM10.365 9l-1.2 6h4.47l1.2-6h-4.47z" clip-rule="evenodd" />
+        </svg>                   
+    Ingresa un primer valor</span>
+    <input #num1 class="w-full border border-gray-400 p-2 focus:outline-none" type="number">
+  </div>
+<input #num2 type="number" name="" id="" class="bg-blue-400 ml-3 w-full border border-gray-400 p-2 focus:outline-none">
+
+
+<select name="" id="opciones" (change)= "primerValor = num1.valueAsNumber; segundoValor= num2.valueAsNumber; Operacion()">
+    <option selected>Operaciones</option>
+    <option value="1" >Suma</option>
+    <option value="2">Resta</option>
+    <option value="3">Multiplicacion</option>
+    <option value="4">División</option>
+</select>
+
+
+<div class="container bg-blue-400" [ngSwitch] = "operacion" >
+    <p *ngSwitchCase="1">Resultado: <span [ngStyle]="{'color':'blue'}">{{resultado}}</span></p>
+    <p *ngSwitchCase="2">Resultado: <span [ngStyle]="{'color':'green'}">{{resultado}}</span></p>
+    <p *ngSwitchCase="3">Resultado: <span [ngStyle]="{'color':'purple'}">{{resultado}}</span></p>
+    <p *ngSwitchCase="4">Resultado: <span [ngStyle]="{'color':'orange'}">{{resultado}}</span></p>
+    <p *ngSwitchDefault="5" >Resultado: <span [ngStyle]="{'color':'red'}">{{none}}</span></p>
+</div>
